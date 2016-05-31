@@ -1,0 +1,332 @@
+# i3 config file (v4)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+# font for window titles. ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# use Mouse+Mod4 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+# start a terminal
+bindsym Mod4+Return exec sakura
+#bindsym Mod4+t exec konsole
+#i3-sensible-terminal
+
+##new_window pixel 1
+new_window pixel 0
+new_float normal
+
+# bar toggle, hide or show 
+bindsym Mod4+m bar mode toggle
+bindsym Mod4+t border toggle 
+#screenshot on printscreen key
+bindcode 107 exec scrot
+
+#bindsym Mod4+x [urgent=latest] focus
+
+
+exec --no-startup-id xautolock -time 10 -locker i3lock &
+
+
+# change container layout (stacked, tabbed, default)
+bindsym Mod4+s layout stacking
+bindsym Mod4+w layout tabbed
+bindsym Mod4+e layout toggle split
+
+# toggle tiling / floating
+bindsym Mod4+Shift+space floating toggle; border normal
+
+# change focus between tiling / floating windows
+bindsym Mod4+space focus mode_toggle
+
+# focus the parent container
+bindsym Mod4+a focus parent
+
+# focus the child container
+#bindsym Mod4+d focus child
+
+
+#bindsym Mod4+Tab exec rofi -now -font "snap-10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
+
+# start dmenu (a program launcher)
+
+bindsym Mod4+d exec grun
+
+##bindsym Mod4+d exec rofi -now -font “snap 10” -fg “#505050” -bg “#000000” -hlfg “#ffb964” -hlbg “#000000” -o 85
+
+# kill focused window
+bindsym Mod4+Shift+q kill
+#bindsym Alt+F4 kill
+
+
+bindsym Mod4+Shift+s exec --no-startup-id i3-msg 'workspace 4; exec serv &;workspace 5; exec len &;workspace 6; exec sult &'
+
+
+
+#dmenu_launch
+# start dmenu (a program launcher)
+#bindsym $mod+d exec grun
+#bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu-launch
+
+bindsym Mod4+b exec i3lock
+
+#set $ws1 1:trm
+#set $ws2 2:web
+#set $ws3 3:mail
+#set $ws4 4:rdp
+########### Assignment to desk #############
+#assign [class="Konsole"]	1
+#assign [class="st"]		1
+#assign [class="Firefox"]	2
+#assign [class="Google"]		2
+#assign [class="Google Chrome"]	2
+#assign [class="Chrome"]		2
+#assign [class="Thunderbird"]	3
+#assign [class="Dolphin"]	3
+
+
+#assign [title="FreeRDP: 192.168.0.235"]	4
+#assign [title="FreeRDP: 192.168.0.236"]	5
+#assign [title="FreeRDP: 192.168.0.22"]	6
+
+# assign
+
+
+#for_window [class="Konsole"] focus child, layout tabbed, focus
+
+#for_window [title="Konsole"] focus child, layout tabbed, focus
+
+
+
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+
+
+for_window [class="Adding a file"] floating enable
+for_window [title="Adding a file"] floating enable
+
+for_window [class="Клиент удаленного рабочего стола Remmina"] floating enable
+for_window [title="Клиент удаленного рабочего стола Remmina"] floating enable
+
+for_window [class="Копирование "] floating enable
+for_window [title="Копирование "] floating enable
+
+for_window [class="Перемещение"] floating enable
+for_window [title="Перемещение"] floating enable
+
+for_window [class="calc"] floating enable
+for_window [class="chat"] floating enable
+for_window [class="Copying"] floating enable
+for_window [class="gpicview"] floating enable
+for_window [class="gRun"] floating enable
+
+for_window [class="mplayer"] floating enable; border normal
+for_window [class="Mplayer"] floating enable; border normal
+for_window [class="MPlayer"] floating enable; border normal
+for_window [class="pidgin"] floating enable
+
+for_window [class="skype"] floating enable
+for_window [class="Skype"] floating enable
+
+for_window [class="StarDict"] floating enable
+for_window [title="StarDict"] floating enable
+
+for_window [class="Окно сообщений"] floating enable
+for_window [class="Список собеседников"] floating enable
+for_window [title="Окно сообщений"] floating enable
+for_window [title="Список собеседников"] floating enable
+
+for_window [class="Hangouts"] floating enable
+for_window [title="Hangouts"] floating enable
+
+for_window [class="TeamViewer"] floating enable
+for_window [title="TeamViewer"] floating enable
+
+for_window [class="Компьютеры и контакты"] floating enable
+for_window [title="Компьютеры и контакты"] floating enable
+
+for_window [title="calc"] floating enable
+for_window [title="chat"] floating enable
+for_window [title="Copying"] floating enable
+for_window [title="gpicview"] floating enable
+for_window [title="gRun"] floating enable
+
+for_window [title="mplayer"] floating enable; border normal
+for_window [title="Mplayer"] floating enable; border normal
+for_window [title="MPlayer"] floating enable; border normal
+for_window [title="pidgin"] floating enable
+
+for_window [title="skype"] floating enable
+for_window [title="Skype"] floating enable
+#for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shrink down 30 px or 30 ppt; workspace 1: desktop
+
+default_orientation horizontal
+#default_orientation vertical
+#workspace_layout stacking
+
+# change focus
+bindsym Mod4+j focus left
+bindsym Mod4+k focus down
+bindsym Mod4+l focus up
+#bindsym Mod4+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+# move focused window
+bindsym Mod4+Shift+j move left
+bindsym Mod4+Shift+k move down
+bindsym Mod4+Shift+l move up
+bindsym Mod4+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+Right move right
+
+# split in horizontal orientation
+bindsym Mod4+h split h
+
+# split in vertical orientation
+bindsym Mod4+v split v
+
+# enter fullscreen mode for the focused container
+bindsym Mod4+f fullscreen
+
+
+
+# switch to workspace
+bindsym Mod4+1 workspace 1
+bindsym Mod4+2 workspace 2
+bindsym Mod4+3 workspace 3
+bindsym Mod4+4 workspace 4
+bindsym Mod4+5 workspace 5
+bindsym Mod4+6 workspace 6
+bindsym Mod4+7 workspace 7
+bindsym Mod4+8 workspace 8
+bindsym Mod4+9 workspace 9
+bindsym Mod4+0 workspace 10
+
+# move focused container to workspace
+bindsym Mod4+Shift+1 move workspace 1
+bindsym Mod4+Shift+2 move workspace 2
+bindsym Mod4+Shift+3 move workspace 3
+bindsym Mod4+Shift+4 move workspace 4
+bindsym Mod4+Shift+5 move workspace 5
+bindsym Mod4+Shift+6 move workspace 6
+bindsym Mod4+Shift+7 move workspace 7
+bindsym Mod4+Shift+8 move workspace 8
+bindsym Mod4+Shift+9 move workspace 9
+bindsym Mod4+Shift+0 move workspace 10
+
+# reload the configuration file
+bindsym Mod4+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod4+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym Mod4+Shift+e exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
+
+        bindsym j               resize shrink left 10 px or 10 ppt
+        bindsym Shift+j         resize grow   left 10 px or 10 ppt
+
+        bindsym k               resize shrink down 10 px or 10 ppt
+        bindsym Shift+k         resize grow   down 10 px or 10 ppt
+
+        bindsym l               resize shrink up 10 px or 10 ppt
+        bindsym Shift+l         resize grow   up 10 px or 10 ppt
+
+        bindsym semicolon       resize shrink right 10 px or 10 ppt
+        bindsym Shift+semicolon resize grow   right 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink left 10 px or 10 ppt
+        bindsym Shift+Left  resize grow   left 10 px or 10 ppt
+
+        bindsym Down        resize shrink down 10 px or 10 ppt
+        bindsym Shift+Down  resize grow   down 10 px or 10 ppt
+
+        bindsym Up          resize shrink up 10 px or 10 ppt
+        bindsym Shift+Up    resize grow   up 10 px or 10 ppt
+
+        bindsym Right       resize shrink right 10 px or 10 ppt
+        bindsym Shift+Right resize grow   right 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod4+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+
+bar {
+status_command i3status
+}
+
+
+
+#bar {
+#	status_command conky|dzen2 -x 1100 -y 1030 -h 18 -w 500 -ta r -fg '#DDDDDD' -bg '#000000' -fn '-misc-fixed-medium-r-semicondensed-*-12-90-100-100-c-60-iso8859-1'
+#	position bottom
+#	colors {
+#        	background #000000
+#        	focused_workspace  #000000 #000000 #DDDDDD
+#	        active_workspace   #303030 #C9D99F #CCCCCC
+#        	inactive_workspace #000000 #000000 #777777
+#    	}
+#}
+
+
+#######################################################################
+# automatically start i3-config-wizard to offer the user to create a
+# keysym-based config which used his favorite modifier (alt or windows)
+#
+# i3-config-wizard will not launch if there already is a config file
+# in ~/.i3/config.
+#
+# Please remove the following exec line:
+#######################################################################
+#exec i3-config-wizard
+
+#exec --no-startup-id i3-msg 'workspace 1; exec konsole &'
+#exec --no-startup-id i3-msg 'workspace 1; exec konsole &'
+exec --no-startup-id i3-msg 'workspace 1; exec sakura &'
+exec --no-startup-id i3-msg 'workspace 4; exec serv &'
+exec --no-startup-id i3-msg 'workspace 5; exec len &'
+exec --no-startup-id i3-msg 'workspace 6; exec sult &'
+exec --no-startup-id i3-msg 'workspace 3; exec claws-mail &' 
+exec --no-startup-id i3-msg 'workspace 3; exec pcmanfm &'
+exec --no-startup-id i3-msg 'workspace 1; exec proxy.sh'
+exec --no-startup-id i3-msg 'workspace 1; exec /home/user/.dropbox-dist/dropboxd start -i'
+exec --no-startup-id i3-msg 'workspace 1; exec eval  `cat ~/.fehbg`'
+
+#exec  eval  `cat ~/.fehbg` | /home/user/.dropbox-dist/dropboxd start -i | proxy.sh 
+
+#| admin  | xfce4-mixer  | dolphin | conky
+##exec --no-startup-id i3-msg 'workspace 1; exec kru &'
+##exec --no-startup-id i3-msg 'workspace 2; exec /home/user/firefox/firefox &'
+
+
+# | thunderbird 
+#/usr/bin/SpiderOak | 
